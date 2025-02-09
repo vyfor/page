@@ -1,0 +1,129 @@
+body {
+    font-family: 'Lexend Giga', sans-serif;
+    margin: 0;
+    height: 100vh;
+    background-color: #000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    flex-direction: column;
+}
+
+.social-links {
+    position: absolute;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 3rem;
+    font-size: 18px;
+    color: white;
+    z-index: 1;
+}
+
+.social-links a {
+    color: white;
+    text-decoration: none;
+    opacity: 0.6;
+    transition: opacity 0.3s ease;
+    animation: entry 3s ease;
+}
+
+@keyframes entry {
+
+    50%,
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 0.6;
+    }
+}
+
+.social-links a:hover {
+    opacity: 1;
+}
+
+.letter {
+    font-size: 100px;
+    font-family: 'Rubik Mono One', sans-serif;
+    color: transparent;
+    -webkit-text-stroke: 2px white;
+    display: inline-block;
+    opacity: 0;
+    transform: translateY(100px);
+    animation: slide-up 0.8s forwards, flicker 10s infinite ease-in-out;
+    animation-timing-function: cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+@keyframes slide-up {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+#text-container {
+    animation: scalePulse 10s infinite;
+    animation-delay: 1.6s;
+    transform-origin: center;
+}
+
+@keyframes scalePulse {
+    0% {
+        transform: scale(1);
+    }
+
+    5% {
+        transform: scale(0.85);
+    }
+
+    20% {
+        transform: scale(0.85);
+    }
+
+    25% {
+        transform: scale(1);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}
+
+@keyframes flicker {
+
+    35%,
+    45%,
+    55%,
+    65%,
+    75%,
+    85%,
+    95% {
+        scale: 1.01;
+        opacity: 0.7;
+    }
+
+    30%,
+    40%,
+    50%,
+    60%,
+    70%,
+    80%,
+    90%,
+    100% {
+        scale: 1;
+        opacity: 1;
+    }
+}
+
+.canvas {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+}
