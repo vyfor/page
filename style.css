@@ -58,6 +58,12 @@ body {
     animation-timing-function: cubic-bezier(0.25, 1, 0.5, 1);
 }
 
+@media screen and (max-width: 600px) {
+    .letter {
+        font-size: 16vw;
+    }
+}
+
 @keyframes slide-up {
     to {
         opacity: 1;
