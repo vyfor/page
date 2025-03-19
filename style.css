@@ -143,6 +143,7 @@ body {
   left: 50%;
   transform: translateX(-50%);
   cursor: pointer;
+  z-index: 10;
 }
 
 .scroll-arrow {
@@ -249,5 +250,9 @@ body {
 
   .about-item {
     font-size: 1rem;
+  }
+
+  .scroll-indicator {
+    bottom: 5vh;
   }
 }
